@@ -21,6 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeUI_DemoCharacter() {}
 	UI_DEMO_API UFunction* Z_Construct_UFunction_AUI_DemoCharacter_GetAmmoIntText();
 	UI_DEMO_API UFunction* Z_Construct_UFunction_AUI_DemoCharacter_GetHealth();
 	UI_DEMO_API UFunction* Z_Construct_UFunction_AUI_DemoCharacter_GetHealthIntText();
+	UI_DEMO_API UFunction* Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
@@ -39,6 +40,7 @@ void EmptyLinkFunctionForGeneratedCodeUI_DemoCharacter() {}
 			{ "GetAmmoIntText", &AUI_DemoCharacter::execGetAmmoIntText },
 			{ "GetHealth", &AUI_DemoCharacter::execGetHealth },
 			{ "GetHealthIntText", &AUI_DemoCharacter::execGetHealthIntText },
+			{ "TakeDamage", &AUI_DemoCharacter::execTakeDamage },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
 	}
@@ -174,6 +176,39 @@ void EmptyLinkFunctionForGeneratedCodeUI_DemoCharacter() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage_Statics
+	{
+		struct UI_DemoCharacter_eventTakeDamage_Parms
+		{
+			float ReturnValue;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UI_DemoCharacter_eventTakeDamage_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Health" },
+		{ "ModuleRelativePath", "UI_DemoCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AUI_DemoCharacter, nullptr, "TakeDamage", sizeof(UI_DemoCharacter_eventTakeDamage_Parms), Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AUI_DemoCharacter_NoRegister()
 	{
 		return AUI_DemoCharacter::StaticClass();
@@ -267,6 +302,7 @@ void EmptyLinkFunctionForGeneratedCodeUI_DemoCharacter() {}
 		{ &Z_Construct_UFunction_AUI_DemoCharacter_GetAmmoIntText, "GetAmmoIntText" }, // 3029845016
 		{ &Z_Construct_UFunction_AUI_DemoCharacter_GetHealth, "GetHealth" }, // 345839524
 		{ &Z_Construct_UFunction_AUI_DemoCharacter_GetHealthIntText, "GetHealthIntText" }, // 948665060
+		{ &Z_Construct_UFunction_AUI_DemoCharacter_TakeDamage, "TakeDamage" }, // 751222763
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUI_DemoCharacter_Statics::Class_MetaDataParams[] = {
@@ -470,7 +506,7 @@ void EmptyLinkFunctionForGeneratedCodeUI_DemoCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AUI_DemoCharacter, 1929583669);
+	IMPLEMENT_CLASS(AUI_DemoCharacter, 1436787802);
 	template<> UI_DEMO_API UClass* StaticClass<AUI_DemoCharacter>()
 	{
 		return AUI_DemoCharacter::StaticClass();

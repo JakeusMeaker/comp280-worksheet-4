@@ -85,9 +85,9 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Health")
 		float GetHealth();
 	UFUNCTION(BlueprintPure, Category = "Health")
+		float TakeDamage();
+	UFUNCTION(BlueprintPure, Category = "Health")
 		FText GetHealthIntText();
-	FTimerHandle IncrementHandle;
-	void incrementalHealth();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 		float Ammo;

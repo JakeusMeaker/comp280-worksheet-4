@@ -50,3 +50,4 @@ void AUI_DemoHUD::BeginPlay()
 		}
 	}
 }
+

@@ -158,11 +158,9 @@ FText AUI_DemoCharacter::GetHealthIntText()
 	return HPText;
 }
 
-void AUI_DemoCharacter::incrementalHealth()
+float AUI_DemoCharacter::TakeDamage()
 {
-	//UE_LOG(LogTemp, Warning, TEXT("HEALTH"));
-	Health += 10;
-	if (Health > 1000) Health = 0;
+	return Health -= 100.0f;
 }
 
 float AUI_DemoCharacter::GetAmmo()
@@ -189,7 +187,7 @@ void AUI_DemoCharacter::OnFire()
 		UWorld* const World = GetWorld();
 		if (World != NULL)
 		{
-			if (bUsingMotionControllers && Ammo > 20)
+			if (bUsingMotionControllers && Ammo > 0)
 			{
 				const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
 				const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
