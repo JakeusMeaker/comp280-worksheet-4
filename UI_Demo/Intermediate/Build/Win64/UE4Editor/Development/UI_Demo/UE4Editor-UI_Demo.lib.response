@@ -7,6 +7,7 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "D:\comp280-worksheet-4\UI_Demo\Intermediate\Build\Win64\UI_DemoEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"D:\comp280-worksheet-4\UI_Demo\Intermediate\Build\Win64\UE4Editor\Development\UI_Demo\VariableInstances.cpp.obj"
 "D:\comp280-worksheet-4\UI_Demo\Intermediate\Build\Win64\UE4Editor\Development\UI_Demo\UI_Demo.cpp.obj"
 "D:\comp280-worksheet-4\UI_Demo\Intermediate\Build\Win64\UE4Editor\Development\UI_Demo\UI_DemoCharacter.cpp.obj"
 "D:\comp280-worksheet-4\UI_Demo\Intermediate\Build\Win64\UE4Editor\Development\UI_Demo\UI_DemoGameMode.cpp.obj"
