@@ -85,12 +85,12 @@ public:
 		float Health;
 	UFUNCTION(BlueprintPure, Category = "Health")
 		float GetHealth();
-	UFUNCTION(BlueprintPure, Category = "Health")
-		float TakeDamage();
+	UFUNCTION(Category = "Health")
+		void TakeDamage();
 	UFUNCTION(BlueprintPure, Category = "Health")
 		FText GetHealthIntText();
 	UPROPERTY(EditAnywhere, Category = "Health")
-		UMaterialInstance *HealthMaterialInstantance;
+		float Damage;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 		float Ammo;
@@ -138,7 +138,6 @@ protected:
 	};
 	void BeginTouch(const ETouchIndex::Type FingerIndex, const FVector Location);
 	void EndTouch(const ETouchIndex::Type FingerIndex, const FVector Location);
-	void TouchUpdate(const ETouchIndex::Type FingerIndex, const FVector Location);
 	TouchData	TouchItem;
 	
 protected:

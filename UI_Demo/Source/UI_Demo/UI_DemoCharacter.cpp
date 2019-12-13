@@ -91,7 +91,7 @@ void AUI_DemoCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	Health = 1000.0f;
-	HealthMaterialInstantance = 0.0f;
+	Damage = 0;
 	Ammo = 20.0f;
 
 	//Attach gun mesh component to Skeleton, doing it here because the skeleton is not yet created in the constructor
@@ -125,6 +125,8 @@ void AUI_DemoCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerI
 
 	// Bind fire event
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AUI_DemoCharacter::OnFire);
+	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &AUI_DemoCharacter::Reload);
+	PlayerInputComponent->BindAction("TakeDamage", IE_Pressed, this, &AUI_DemoCharacter::TakeDamage);
 
 	// Enable touchscreen input
 	EnableTouchscreenMovement(PlayerInputComponent);
@@ -149,6 +151,12 @@ float AUI_DemoCharacter::GetHealth()
 	return Health / 1000;
 }
 
+void AUI_DemoCharacter::TakeDamage()
+{	
+	Damage += 0.1f;
+	Health -= 100.0f;
+}
+
 FText AUI_DemoCharacter::GetHealthIntText()
 {
 	int32 HP = FMath::RoundHalfFromZero(Health / 100);
@@ -158,11 +166,7 @@ FText AUI_DemoCharacter::GetHealthIntText()
 	return HPText;
 }
 
-float AUI_DemoCharacter::TakeDamage()
-{
-	HealthMaterialInstantance += 0.1f;
-	return Health -= 100.0f;
-}
+	
 
 float AUI_DemoCharacter::GetAmmo()
 {
@@ -177,7 +181,11 @@ FText AUI_DemoCharacter::GetAmmoIntText()
 	FString AmmoHUD = AMMO + FString(TEXT("/20"));
 	FText AmmoText = FText::FromString(AmmoHUD);
 	return AmmoText;
+}
 
+void AUI_DemoCharacter::Reload()
+{
+	Ammo = 20;
 }
 
 void AUI_DemoCharacter::OnFire()
@@ -186,9 +194,9 @@ void AUI_DemoCharacter::OnFire()
 	if (ProjectileClass != NULL)
 	{
 		UWorld* const World = GetWorld();
-		if (World != NULL)
+		if (World != NULL && Ammo > 0)
 		{
-			if (bUsingMotionControllers && Ammo > 0)
+			if (bUsingMotionControllers)
 			{
 				const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
 				const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
@@ -229,6 +237,7 @@ void AUI_DemoCharacter::OnFire()
 		}
 	}
 }
+
 
 void AUI_DemoCharacter::OnResetVR()
 {

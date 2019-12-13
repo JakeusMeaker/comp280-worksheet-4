@@ -43,7 +43,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(float*)Z_Param__Result=P_THIS->TakeDamage(); \
+		P_THIS->TakeDamage(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -86,7 +86,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(float*)Z_Param__Result=P_THIS->TakeDamage(); \
+		P_THIS->TakeDamage(); \
 		P_NATIVE_END; \
 	} \
  \
