@@ -91,6 +91,7 @@ void AUI_DemoCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	Health = 1000.0f;
+	HealthMaterialInstantance = 0.0f;
 	Ammo = 20.0f;
 
 	//Attach gun mesh component to Skeleton, doing it here because the skeleton is not yet created in the constructor
@@ -108,7 +109,6 @@ void AUI_DemoCharacter::BeginPlay()
 		Mesh1P->SetHiddenInGame(false, true);
 	}
 
-	GetWorldTimerManager().SetTimer(IncrementHandle, this, &AUI_DemoCharacter::incrementalHealth, 0.1f, true, 0.2f);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -160,6 +160,7 @@ FText AUI_DemoCharacter::GetHealthIntText()
 
 float AUI_DemoCharacter::TakeDamage()
 {
+	HealthMaterialInstantance += 0.1f;
 	return Health -= 100.0f;
 }
 

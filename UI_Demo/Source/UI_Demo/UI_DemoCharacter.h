@@ -88,6 +88,8 @@ public:
 		float TakeDamage();
 	UFUNCTION(BlueprintPure, Category = "Health")
 		FText GetHealthIntText();
+	UPROPERTY(EditAnywhere, Category = "Health")
+		UMaterialInstance *HealthMaterialInstantance;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 		float Ammo;
@@ -95,6 +97,7 @@ public:
 		float GetAmmo();
 	UFUNCTION(BlueprintPure, Category = "Ammo")
 		FText GetAmmoIntText();
+
 
 protected:
 	
