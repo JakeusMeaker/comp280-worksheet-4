@@ -66,4 +66,22 @@
       <Filter>Source\UI_Demo</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source\UI_Demo\Public">
+      <UniqueIdentifier>{185c27b7-3193-4d91-b942-b2a77fca0e52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\UI_Demo\Private">
+      <UniqueIdentifier>{db68eef2-3d05-4fb0-aa1a-a41d25c3b693}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\UI_Demo\Public\VariableInstances.h">
+      <Filter>Source\UI_Demo\Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\UI_Demo\Private\VariableInstances.cpp">
+      <Filter>Source\UI_Demo\Private</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

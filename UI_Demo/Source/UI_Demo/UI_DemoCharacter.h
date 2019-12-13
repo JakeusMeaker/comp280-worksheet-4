@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "UI_DemoCharacter.generated.h"
 
+
 class UInputComponent;
 
 UCLASS(config=Game)
@@ -97,12 +98,14 @@ public:
 		float GetAmmo();
 	UFUNCTION(BlueprintPure, Category = "Ammo")
 		FText GetAmmoIntText();
+	
 
 
 protected:
 	
 	/** Fires a projectile. */
 	void OnFire();
+	void Reload();
 
 	/** Resets HMD orientation and position in VR. */
 	void OnResetVR();

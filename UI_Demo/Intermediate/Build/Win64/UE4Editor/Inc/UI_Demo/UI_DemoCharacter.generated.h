@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define UI_DEMO_UI_DemoCharacter_generated_h
 
-#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_RPC_WRAPPERS \
+#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execGetAmmoIntText) \
 	{ \
@@ -56,7 +56,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
-#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGetAmmoIntText) \
 	{ \
@@ -99,7 +99,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
-#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_INCLASS_NO_PURE_DECLS \
+#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAUI_DemoCharacter(); \
 	friend struct Z_Construct_UClass_AUI_DemoCharacter_Statics; \
@@ -108,7 +108,7 @@ public: \
 	DECLARE_SERIALIZER(AUI_DemoCharacter)
 
 
-#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_INCLASS \
+#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesAUI_DemoCharacter(); \
 	friend struct Z_Construct_UClass_AUI_DemoCharacter_Statics; \
@@ -117,7 +117,7 @@ public: \
 	DECLARE_SERIALIZER(AUI_DemoCharacter)
 
 
-#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_STANDARD_CONSTRUCTORS \
+#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AUI_DemoCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AUI_DemoCharacter) \
@@ -130,7 +130,7 @@ private: \
 public:
 
 
-#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_ENHANCED_CONSTRUCTORS \
+#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AUI_DemoCharacter(AUI_DemoCharacter&&); \
@@ -141,7 +141,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AUI_DemoCharacter); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AUI_DemoCharacter)
 
 
-#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_PRIVATE_PROPERTY_OFFSET \
+#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__Mesh1P() { return STRUCT_OFFSET(AUI_DemoCharacter, Mesh1P); } \
 	FORCEINLINE static uint32 __PPO__FP_Gun() { return STRUCT_OFFSET(AUI_DemoCharacter, FP_Gun); } \
 	FORCEINLINE static uint32 __PPO__FP_MuzzleLocation() { return STRUCT_OFFSET(AUI_DemoCharacter, FP_MuzzleLocation); } \
@@ -152,25 +152,25 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AUI_DemoCharacter); \
 	FORCEINLINE static uint32 __PPO__L_MotionController() { return STRUCT_OFFSET(AUI_DemoCharacter, L_MotionController); }
 
 
-#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_11_PROLOG
-#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_GENERATED_BODY_LEGACY \
+#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_12_PROLOG
+#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_PRIVATE_PROPERTY_OFFSET \
-	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_RPC_WRAPPERS \
-	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_INCLASS \
-	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_STANDARD_CONSTRUCTORS \
+	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_PRIVATE_PROPERTY_OFFSET \
+	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_RPC_WRAPPERS \
+	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_INCLASS \
+	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_GENERATED_BODY \
+#define UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_PRIVATE_PROPERTY_OFFSET \
-	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_INCLASS_NO_PURE_DECLS \
-	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_14_ENHANCED_CONSTRUCTORS \
+	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_PRIVATE_PROPERTY_OFFSET \
+	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_INCLASS_NO_PURE_DECLS \
+	UI_Demo_Source_UI_Demo_UI_DemoCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
