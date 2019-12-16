@@ -89,8 +89,9 @@ public:
 		void TakeDamage();
 	UFUNCTION(BlueprintPure, Category = "Health")
 		FText GetHealthIntText();
-	UPROPERTY(EditAnywhere, Category = "Health")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
 		float Damage;
+
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 		float Ammo;
@@ -98,7 +99,10 @@ public:
 		float GetAmmo();
 	UFUNCTION(BlueprintPure, Category = "Ammo")
 		FText GetAmmoIntText();
-	
+
+	UFUNCTION(BlueprintPure, Category = "controls")
+		void UpdateActionMapping(FName ActName, FString OldKey, FString NewKey);
+			
 
 
 protected:

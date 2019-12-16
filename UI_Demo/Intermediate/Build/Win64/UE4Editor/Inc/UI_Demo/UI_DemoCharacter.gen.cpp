@@ -318,7 +318,7 @@ void EmptyLinkFunctionForGeneratedCodeUI_DemoCharacter() {}
 		{ "ModuleRelativePath", "UI_DemoCharacter.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AUI_DemoCharacter_Statics::NewProp_Damage = { "Damage", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUI_DemoCharacter, Damage), METADATA_PARAMS(Z_Construct_UClass_AUI_DemoCharacter_Statics::NewProp_Damage_MetaData, ARRAY_COUNT(Z_Construct_UClass_AUI_DemoCharacter_Statics::NewProp_Damage_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AUI_DemoCharacter_Statics::NewProp_Damage = { "Damage", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUI_DemoCharacter, Damage), METADATA_PARAMS(Z_Construct_UClass_AUI_DemoCharacter_Statics::NewProp_Damage_MetaData, ARRAY_COUNT(Z_Construct_UClass_AUI_DemoCharacter_Statics::NewProp_Damage_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUI_DemoCharacter_Statics::NewProp_Health_MetaData[] = {
 		{ "Category", "Health" },
@@ -508,7 +508,7 @@ void EmptyLinkFunctionForGeneratedCodeUI_DemoCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AUI_DemoCharacter, 949639758);
+	IMPLEMENT_CLASS(AUI_DemoCharacter, 235581238);
 	template<> UI_DEMO_API UClass* StaticClass<AUI_DemoCharacter>()
 	{
 		return AUI_DemoCharacter::StaticClass();

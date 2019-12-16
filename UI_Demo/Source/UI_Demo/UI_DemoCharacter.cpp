@@ -152,7 +152,7 @@ float AUI_DemoCharacter::GetHealth()
 }
 
 void AUI_DemoCharacter::TakeDamage()
-{	
+{
 	Damage += 0.1f;
 	Health -= 100.0f;
 }
@@ -166,7 +166,7 @@ FText AUI_DemoCharacter::GetHealthIntText()
 	return HPText;
 }
 
-	
+
 
 float AUI_DemoCharacter::GetAmmo()
 {
@@ -183,6 +183,16 @@ FText AUI_DemoCharacter::GetAmmoIntText()
 	return AmmoText;
 }
 
+void AUI_DemoCharacter::UpdateActionMapping(FName ActName, FString OldKey, FString NewKey)
+{
+	UInputSettings* Settings = const_cast<UInputSettings*>(GetDefault<UInputSettings>());
+	if (!Settings) { return; }
+
+	Settings->RemoveActionMapping(FInputActionKeyMapping(ActName, FKey(*OldKey)));
+	Settings->AddActionMapping(FInputActionKeyMapping(ActName, FKey(*NewKey)));
+	Settings->SaveKeyMappings();
+}
+
 void AUI_DemoCharacter::Reload()
 {
 	Ammo = 20;
@@ -190,50 +200,53 @@ void AUI_DemoCharacter::Reload()
 
 void AUI_DemoCharacter::OnFire()
 {
-	// try and fire a projectile
-	if (ProjectileClass != NULL)
+	if (Ammo > 0) 
 	{
-		UWorld* const World = GetWorld();
-		if (World != NULL && Ammo > 0)
+		// try and fire a projectile
+		if (ProjectileClass != NULL)
 		{
-			if (bUsingMotionControllers)
+			UWorld* const World = GetWorld();
+			if (World != NULL)
 			{
-				const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
-				const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
-				World->SpawnActor<AUI_DemoProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
-			}
-			else
-			{
-				const FRotator SpawnRotation = GetControlRotation();
-				// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
-				const FVector SpawnLocation = ((FP_MuzzleLocation != nullptr) ? FP_MuzzleLocation->GetComponentLocation() : GetActorLocation()) + SpawnRotation.RotateVector(GunOffset);
+				if (bUsingMotionControllers)
+				{
+					const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
+					const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
+					World->SpawnActor<AUI_DemoProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+				}
+				else
+				{
+					const FRotator SpawnRotation = GetControlRotation();
+					// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
+					const FVector SpawnLocation = ((FP_MuzzleLocation != nullptr) ? FP_MuzzleLocation->GetComponentLocation() : GetActorLocation()) + SpawnRotation.RotateVector(GunOffset);
 
-				//Set Spawn Collision Handling Override
-				FActorSpawnParameters ActorSpawnParams;
-				ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
+					//Set Spawn Collision Handling Override
+					FActorSpawnParameters ActorSpawnParams;
+					ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 
-				// spawn the projectile at the muzzle
-				World->SpawnActor<AUI_DemoProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
+					// spawn the projectile at the muzzle
+					World->SpawnActor<AUI_DemoProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
 
-				Ammo--;
+					Ammo--;
+				}
 			}
 		}
-	}
 
-	// try and play the sound if specified
-	if (FireSound != NULL)
-	{
-		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
-	}
-
-	// try and play a firing animation if specified
-	if (FireAnimation != NULL)
-	{
-		// Get the animation object for the arms mesh
-		UAnimInstance* AnimInstance = Mesh1P->GetAnimInstance();
-		if (AnimInstance != NULL)
+		// try and play the sound if specified
+		if (FireSound != NULL)
 		{
-			AnimInstance->Montage_Play(FireAnimation, 1.f);
+			UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
+		}
+
+		// try and play a firing animation if specified
+		if (FireAnimation != NULL)
+		{
+			// Get the animation object for the arms mesh
+			UAnimInstance* AnimInstance = Mesh1P->GetAnimInstance();
+			if (AnimInstance != NULL)
+			{
+				AnimInstance->Montage_Play(FireAnimation, 1.f);
+			}
 		}
 	}
 }
@@ -348,6 +361,6 @@ bool AUI_DemoCharacter::EnableTouchscreenMovement(class UInputComponent* PlayerI
 		//PlayerInputComponent->BindTouch(EInputEvent::IE_Repeat, this, &AUI_DemoCharacter::TouchUpdate);
 		return true;
 	}
-	
+
 	return false;
 }

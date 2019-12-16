@@ -28,10 +28,8 @@
 /wd4838
 /we4668
 /I .
-/I D:\comp280-worksheet-4\UI_Demo\Source\UI_Demo\Private
 /I D:\comp280-worksheet-4\UI_Demo\Intermediate\Build\Win64\UE4Editor\Inc\UI_Demo
 /I D:\comp280-worksheet-4\UI_Demo\Source
-/I D:\comp280-worksheet-4\UI_Demo\Source\UI_Demo\Public
 /I D:\comp280-worksheet-4\UI_Demo\Source\UI_Demo
 /I Runtime
 /I Runtime\Core\Public
